@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BEBE TYM</title>
+    <style>
+        html, body {
+            font-family: Arial, sans-serif;
+            background: url('/Users/markdaryll/Desktop/IMG_2944.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            height: 100%; /* Ensure the background covers the full viewport height */
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 500px;
+            margin: 50px auto; /* Allow space for scrolling if content exceeds viewport */
+        }
+        h1 {
+            color: #6198ff;
+        }
+        p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #6198ff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #6198ff;
+        }
+        .gif-container, .date-container {
+            margin-top: 20px;
+        }
+        .date-container {
+            display: none; /* Initially hidden */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Will You Go on a Date With Me?</h1>
+        <p><strong>When:</strong> December 18, 2024 Wednesday after work</p>
+        <p><strong>Where:</strong> Panco Cafe Podium Ortigas</p>
+        <p><strong>What to Eat:</strong> Anything You want on the menu Babe hehe</p>
+        <p><strong>Afterwards:</strong> Anywhere you like hehehe</p>
+        <button id="yes-button" onclick="respondYes()">Yes, usto q</button>
+        <button onclick="respondNo()">Sorry, baka next year nalang "iiyak si bebe mark.."</button>
+        <div id="gif-container" class="gif-container"></div>
+        <div id="date-container" class="date-container">
+            <p>Please select a new date:</p>
+            <!-- Link to Google Form for date selection -->
+            <a href="https://docs.google.com/forms/d/1jS4iFsgqc2n-Ky6w1mJlZZf9mb1tJLaYhdGMQPIliWI/edit" target="_blank">
+                <button>Select a New Date</button>
+            </a>
+        </div>
+        <div id="confirm-container" style="display: none;">
+            <p>Thank you for saying Yes! Please confirm by clicking below:</p>
+            <!-- Link to Google Form for confirmation -->
+            <a href="https://docs.google.com/forms/d/1jS4iFsgqc2n-Ky6w1mJlZZf9mb1tJLaYhdGMQPIliWI/edit" target="_blank">
+                <button>Confirm My Yes</button>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        function respondYes() {
+            const gifContainer = document.getElementById('gif-container');
+            gifContainer.innerHTML = `
+                <img src="https://c.tenor.com/eoM1uCVuXtkAAAAC/yay-excited.gif" alt="Happy GIF" style="width: 100%; border-radius: 10px;">
+                <p>Yay! Can't wait to see you ❤️</p>
+            `;
+            document.getElementById('date-container').style.display = 'none';
+            document.getElementById('confirm-container').style.display = 'block'; // Show confirmation button
+        }
+
+        function respondNo() {
+            const gifContainer = document.getElementById('gif-container');
+            gifContainer.innerHTML = `
+                <img src="https://media.giphy.com/media/OPU6wzx8JrHna/giphy.gif" alt="Crying GIF" style="width: 100%; border-radius: 10px;">
+                <p>NOOOOOOO 💔</p>
+            `;
+            document.getElementById('date-container').style.display = 'block'; // Show the date picker
+            document.getElementById('confirm-container').style.display = 'none'; // Hide confirmation
+        }
+    </script>
+</body>
+</html>
